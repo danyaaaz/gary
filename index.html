@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <style>
+        .gary {
+            color: red;
+            font-size: 50px;
+            text-align: center;
+        }
+        
+        .cute {
+            color: blue;
+            font-size: 40px;
+            text-align: center;
+        }
+        
+        .bober {
+            color: darkgreen;
+            font-size: 45px;
+            text-align: left;
+        }
+        
+        .a {
+            color: sienna;
+            font-size: 45px;
+            text-align: left;
+        }
+        
+        /* Стили для кнопки */
+        .fart-button {
+            padding: 20px 40px;
+            font-size: 24px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        
+        .fart-button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        
+        .fart-button:active {
+            background-color: #3d8b40;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="gary">Это первый сайт гэри</h1>
+    <p class="cute"><b>Гарик милый</b></p>
+    
+    <h1 class="bober">Гарик рад вас видеть на этом сайте!</h1>
+    
+    
+    <div class="button-container">
+        <button class="fart-button" onclick="playFartSound()">
+            НАЖМИ ДЛЯ ПЕРДЕЖА 
+        </button>
+    </div>
+    
+    <h2 class="a">ГАРИК ОБКАКАЛСЯ</h2>
+    <img src="image/g.jpg" alt="ФУУУУУ">
+    <h1>ФУУУУУУ</h1>
+    
+    <script>
+        
+        const FART_SOUND_PATH = "sound/poop.mp3";
+        
+        function playFartSound() {
+            try {
+                
+                const fartSound = new Audio(FART_SOUND_PATH);
+                
+                
+                fartSound.play()
+                    .then(() => {
+                        console.log("Звук пердежа воспроизводится!");
+                    })
+                    .catch(error => {
+                        console.error("Ошибка воспроизведения:", error);
+                        alert("Не удалось воспроизвести звук! Проверьте путь к файлу: " + FART_SOUND_PATH);
+                    });
+            } catch (error) {
+                console.error("Ошибка создания аудио:", error);
+                alert("Произошла ошибка при создании звука!");
+            }
+        }
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>
